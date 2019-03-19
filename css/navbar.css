@@ -48,9 +48,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  list-style: none;
 }
 .header > nav > ul.nav_hd > li
 {
+  list-style: none;
   position: relative;
   margin: 17px 0;
 }
@@ -153,18 +155,21 @@
   width: 80%;
   opacity: 0;
   transition: 400ms;
+  list-style: none;
 }
 .header-2 > nav > ul > li
 {
   cursor: pointer;
   width: 100%;
   white-space: nowrap;
+  list-style: none;
 }
 .header-2 > nav > ul.nav_hd
 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  list-style: none;
 }
 .header-2 > nav > ul.nav_hd > li,
 .header-2 > nav > ul.nav_hd > li > a
