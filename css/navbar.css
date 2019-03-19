@@ -1,0 +1,345 @@
+*{
+  /* list-style: none; */
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'main';
+  src: url(../fonts/BlackOpsOne-Regular.ttf);
+}
+.wrap
+{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.header
+{
+  position: absolute;
+  width: 100px;
+  height: 100vh;
+  overflow: hidden;
+  transition: 400ms;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.789) 10%, #000000 100% );
+}
+.wrap:hover > .header-2
+{
+  width: 250px;
+}
+.wrap:hover > .header-2 > nav > ul
+{
+  opacity: 1;
+  list-style: none;
+}
+.header > nav
+{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.header > nav > ul.nav_hd
+{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header > nav > ul.nav_hd > li
+{
+  position: relative;
+  margin: 17px 0;
+}
+.header > nav > ul.nav_hd > li:hover > a > .fas,
+.header > nav > ul.nav_hd > li:hover > a > .fab
+{
+  color: #fff;
+}
+.header > nav > ul.nav_hd > li > a > .fas,
+.header > nav > ul.nav_hd > li > a > .fab
+{
+  color: rgba(255, 255, 255, 0.26);
+  font-size: 23px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+/* Glow Section */
+
+.header > nav > ul.nav_hd > li > a > .fas.glow,
+.header > nav > ul.nav_hd > li > a > .fab.glow
+{
+  color: #fff;
+}
+.header > nav > ul > li > a.glow
+{
+  color: #fff;
+}
+.header > nav > ul > li > a > .far.glow
+{
+  color: #fff;
+}
+.header > nav > ul > li:hover > a > .far
+{
+  color: #fff;
+}
+.header-2 > nav > ul.nav_hd > li.glow > a
+{
+  color: #fff;
+}
+.header-2 > nav > ul.last-one > li.glow > h3 > a
+{
+  color: #fff;
+}
+
+
+
+
+.header > nav > ul > li > img
+{
+  margin-top: 40px;
+  width: 60px;
+}
+.header > nav > ul > li > a > .far
+{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.37);
+  z-index: 1;
+  cursor: pointer;
+  transition: 300ms;
+}
+.header > nav > ul > li > .fa
+{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  display: none;
+}
+
+
+
+/* Header - 2 Section */
+
+.header-2
+{
+  width: 0px;
+  height: 100vh;
+  position: fixed;
+  left: 100px;
+  transition: 400ms ease-in-out;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.789) 10%, #000000 100% );
+}
+.header-2 > nav
+{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-2 > nav > ul > li > h3
+{
+  white-space: nowrap;
+}
+.header-2 > nav > ul
+{
+  width: 80%;
+  opacity: 0;
+  transition: 400ms;
+}
+.header-2 > nav > ul > li
+{
+  cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
+}
+.header-2 > nav > ul.nav_hd
+{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header-2 > nav > ul.nav_hd > li,
+.header-2 > nav > ul.nav_hd > li > a
+{
+  position: relative;
+  margin: 20px 0;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgba(255, 255, 255, 0.37);
+  transition: 300ms;
+}
+.header-2 > nav > ul.nav_hd > li:hover > a
+{
+  color: #fff;
+}
+.header-2 > nav > ul:last-child > li > h3,
+.header-2 > nav > ul:last-child > li > h3 > a
+{
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.37);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  transition: 300ms;
+}
+.header-2 > nav > ul:last-child > li > h3:hover > a
+{
+  color: #fff;
+}
+.header-2 > nav > ul:first-child > li > h2
+{
+  margin-top: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #e1bbc9;
+  font-family: 'main';
+}
+.header-2 > nav > ul:first-child > li > h2 > span
+{
+  font-size: 29px;
+  margin: 2px;
+  font-style: italic;
+  color: rgb(221, 84, 29);
+}
+.header-2.open
+  {
+    height: 300px;
+    width: 100vw;
+  }
+  .header-2.opne > nav > ul
+  {
+    opacity: 1;
+  }
+/* Footer Section */
+
+.footer_wrap
+{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+@media(max-width: 768px)
+{
+  .wrap:hover > .header-2 > nav > ul
+  {
+    opacity: 1;
+  }
+  .header
+  {
+    position: absolute;
+    width: 100vw;
+    height: 70px;
+  }
+  .header > nav
+  {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header > nav > ul > li > a > .far
+  {
+    display: none;
+  }
+  .header > nav > ul > li > .fa
+  {
+    margin-bottom: 0px;
+    font-size: 20px;
+    margin-right: 30px;
+    color: #fff;
+    display: block;
+  }
+  .header > nav > ul.nav_hd
+  {
+    display: none;
+  }
+  .header > nav > ul > li > img
+  {
+    margin-top: 0px;
+    margin-left: 10px;
+    width: 60px;
+  }
+  .header > nav > ul > li > .far
+  {
+    margin-bottom: 0px;
+    font-size: 20px;
+    margin-right: 30px;
+    color: #fff;
+  }
+  .header-2
+  {
+    width: 100vw;
+    height: 0px;
+    left: 0;
+    position: fixed;
+    top: 70px;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 10%, #000000 100% );
+  }
+  .wrap:hover > .header-2
+  {
+    width: 100vw;
+  }
+  .header-2 > nav
+  {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-2 > nav > ul.nav_hd
+  {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-2 > nav > ul
+  {
+    width: auto;
+    opacity: 1;
+  }
+  .header-2 > nav > ul > li > a
+  {
+    text-decoration: none;
+  }
+  .header-2 > nav > ul > li
+  {
+    width: auto;
+  }
+  .header-2 > nav > ul:last-child > li > h3
+  {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 15px;
+  }
+  .header-2 > nav > ul:first-child > li > h2
+  {
+    /* font-size: 2vw; */
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+  .header-2 > nav > ul.nav_hd > li,
+  .header-2 > nav > ul.nav_hd > li > a
+  {
+    margin: 7px 0;
+  }
+}
