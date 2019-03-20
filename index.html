@@ -69,6 +69,9 @@
             </nav>
         </div>
     </div>
+    <div class="modal">
+        <img src="./Images/resized/1.jpg" alt="">
+    </div>
     <div class="container" id="home">
         <img src="./Images/2.jpg" alt="">
         <div class="text_wrap">
@@ -245,11 +248,10 @@
             </div>
             <div class="footer_content">
                 <h3>&copy; Copyright IMS Ghaziabad University Courses Campus. All right reserved.</h3>
-                <h3>Developed by - IMSUC EWL Team</h3>
+                <h3>Developed by - IMSUC EWL <span class="trigger">Team</span></h3>
             </div>
         </div>
     </div>
-
 
 
     <script src="./js/jquery-3.3.1.min.js"></script>
@@ -268,127 +270,136 @@
                 $('.header-2').removeClass('open');
             })
 
-            // Calling Window Scroll Function
-
-            $(window).scroll(function () {
-
-                var scroll = $(this).scrollTop();
-
-                // Back to Top 
-
-                if (scroll > 50) {
-                    $('.back').css({
-                        'transition': '400ms',
-                        'transform': 'translate(-5%, -5%) translateX(0px)'
-                    })
-                } else
-                if (scroll < 50) {
-                    $('.back').css({
-                        'transition': '400ms',
-                        'transform': 'translate(-5%, -5%) translateX(100px)'
-                    })
-                }
-
-
-                // Parallax Effects
-
-                var parallaxEffect = function (element) {
-                    $(element).css({
-                        'background-position-y': -(scroll * 0.1) + 'px'
-                    })
-                }
-
-                parallaxEffect('.rule_wrap > .wrap-1');
-                parallaxEffect('.rule_wrap > .wrap-2');
-                parallaxEffect('.rule_wrap > .wrap-3');
-                parallaxEffect('.rule_wrap > .wrap-4');
-                parallaxEffect('.wrap_foot');
-
-                // Media Query with JQuery
-
-                if ($(window).width() > 844) {
-                    $('.rule_wrap > .wrapp:nth-child(even) > .image').css({
-                        'margin-left': +(scroll * 0.004) + 'vw'
-                    })
-                    $('.rule_wrap > .wrapp:nth-child(odd) > .image').css({
-                        'margin-right': +(scroll * 0.004) + 'vw'
-                    })
-                    $('.container > img').css({
-                        'top': -(scroll * 0.05) + 'px'
+            $('.trigger').dblclick(function () {
+                    $('.modal').css({
+                        'transform': 'scale(1, 1)'
                     })
 
-                    // Scroll Animation
+                    setTimeout(() => {
+                        $('.modal').css({
+                            'transform': 'scale(0, 1)'
+                        })
+                    }, 3000);
 
-                    var addscrollfn = function (element, scrollPosition) {
-                        let addCome = function (element) {
-                            $(`.rule_wrap > ${element} > .rules`).addClass('come');
-                            $(`.rule_wrap > ${element} > .image`).addClass('come');
-                        }
-
-                        if (scroll > scrollPosition) {
-                            addCome(element);
-                        }
-                    }
-
-                    var removescrollfn = function (element, scrollthis, scrollthat) {
-                        let removeCome = function (element) {
-                            $(`.rule_wrap > ${element} > .rules`).removeClass('come');
-                            $(`.rule_wrap > ${element} > .image`).removeClass('come');
-                        }
-
-                        if (scroll > scrollthis || scroll < scrollthat) {
-                            removeCome(element);
-                        }
-                    }
-
-                    addscrollfn('.wrap-1', 1779);
-                    addscrollfn('.wrap-2', 2224);
-                    addscrollfn('.wrap-3', 2701);
-
-                    removescrollfn('.wrap-1', 2502, 1780);
-                    removescrollfn('.wrap-2', 3003, 2224);
-                    removescrollfn('.wrap-3', 3790, 2710);
-                } else {
-
-
-                }
-
-                console.log(scroll);
             })
 
-            // Glow Effect in Navigation Bar
+        // Calling Window Scroll Function
 
-            var glow = function (add, remove) {
-                $(`.${add}`).on('mouseover', function () {
-                    $(`.${remove}`).addClass('glow');
+        $(window).scroll(function () {
+
+            var scroll = $(this).scrollTop();
+
+            // Back to Top 
+
+            if (scroll > 50) {
+                $('.back').css({
+                    'transition': '400ms',
+                    'transform': 'translate(-5%, -5%) translateX(0px)'
                 })
-                $(`.${add}`).on('mouseout', function () {
-                    $(`.${remove}`).removeClass('glow');
-                })
-                $(`.${remove}`).on('mouseover', function () {
-                    $(`.${add}`).addClass('glow');
-                })
-                $(`.${remove}`).on('mouseout', function () {
-                    $(`.${add}`).removeClass('glow');
+            } else
+            if (scroll < 50) {
+                $('.back').css({
+                    'transition': '400ms',
+                    'transform': 'translate(-5%, -5%) translateX(100px)'
                 })
             }
 
-            glow('home', 'fa-home');
-            glow('abt_hack', 'fa-hackerrank');
-            glow('events', 'fa-empire');
-            glow('rules', 'fa-gavel');
-            glow('sch', 'fa-calendar-day');
-            glow('reg', 'fa-cash-register');
-            glow('contact', 'fa-comment-alt')
+
+            // Parallax Effects
+
+            var parallaxEffect = function (element) {
+                $(element).css({
+                    'background-position-y': -(scroll * 0.1) + 'px'
+                })
+            }
+
+            parallaxEffect('.rule_wrap > .wrap-1');
+            parallaxEffect('.rule_wrap > .wrap-2');
+            parallaxEffect('.rule_wrap > .wrap-3');
+            parallaxEffect('.rule_wrap > .wrap-4');
+            parallaxEffect('.wrap_foot');
+
+            // Media Query with JQuery
+
+            if ($(window).width() > 844) {
+                $('.rule_wrap > .wrapp:nth-child(even) > .image').css({
+                    'margin-left': +(scroll * 0.004) + 'vw'
+                })
+                $('.rule_wrap > .wrapp:nth-child(odd) > .image').css({
+                    'margin-right': +(scroll * 0.004) + 'vw'
+                })
+                $('.container > img').css({
+                    'top': -(scroll * 0.05) + 'px'
+                })
+
+                // Scroll Animation
+
+                var addscrollfn = function (element, scrollPosition) {
+                    let addCome = function (element) {
+                        $(`.rule_wrap > ${element} > .rules`).addClass('come');
+                        $(`.rule_wrap > ${element} > .image`).addClass('come');
+                    }
+
+                    if (scroll > scrollPosition) {
+                        addCome(element);
+                    }
+                }
+
+                var removescrollfn = function (element, scrollthis, scrollthat) {
+                    let removeCome = function (element) {
+                        $(`.rule_wrap > ${element} > .rules`).removeClass('come');
+                        $(`.rule_wrap > ${element} > .image`).removeClass('come');
+                    }
+
+                    if (scroll > scrollthis || scroll < scrollthat) {
+                        removeCome(element);
+                    }
+                }
+
+                addscrollfn('.wrap-1', 1779);
+                addscrollfn('.wrap-2', 2224);
+                addscrollfn('.wrap-3', 2701);
+
+                removescrollfn('.wrap-1', 2502, 1780);
+                removescrollfn('.wrap-2', 3003, 2224);
+                removescrollfn('.wrap-3', 3790, 2710);
+            } else {
 
 
+            }
 
-            $(scrollLink).click(function (e) {
-                e.preventDefault();
-                $('body,html').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000)
+            console.log(scroll);
+        })
+
+        // Glow Effect in Navigation Bar
+
+        var glow = function (add, remove) {
+            $(`.${add}`).on('mouseover', function () {
+                $(`.${remove}`).addClass('glow');
             })
+            $(`.${add}`).on('mouseout', function () {
+                $(`.${remove}`).removeClass('glow');
+            })
+            $(`.${remove}`).on('mouseover', function () {
+                $(`.${add}`).addClass('glow');
+            })
+            $(`.${remove}`).on('mouseout', function () {
+                $(`.${add}`).removeClass('glow');
+            })
+        }
+
+        glow('home', 'fa-home'); glow('abt_hack', 'fa-hackerrank'); glow('events', 'fa-empire'); glow('rules',
+            'fa-gavel'); glow('sch', 'fa-calendar-day'); glow('reg', 'fa-cash-register'); glow('contact',
+            'fa-comment-alt')
+
+
+
+        $(scrollLink).click(function (e) {
+            e.preventDefault();
+            $('body,html').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000)
+        })
 
         })
     </script>
